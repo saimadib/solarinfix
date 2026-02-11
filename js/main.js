@@ -21,8 +21,8 @@
     });
 
 
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a, .btn-scroll").on('click', function (event) {
+    // Smooth scrolling on the navbar links (exclude dropdown toggles)
+    $(".navbar-nav a:not(.dropdown-toggle):not(.dropdown-item), .btn-scroll").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
 
@@ -34,6 +34,17 @@
                 $('.navbar-nav .active').removeClass('active');
                 $(this).closest('a').addClass('active');
             }
+        }
+    });
+
+    // Dropdown items that link to page sections
+    $(".dropdown-item[href^='#']").on('click', function (event) {
+        var hash = this.hash;
+        if (hash && hash !== "#" && $(hash).length) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 45
+            }, 1500, 'easeInOutExpo');
         }
     });
 

@@ -94,6 +94,146 @@ body {
     background: linear-gradient(135deg, #E9A825 0%, #CC8F10 100%) !important;
 }
 
+/* ---------- Navbar Dropdowns ---------- */
+.navbar-dark .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: 2px;
+    border-top-width: 5px;
+    border-right-width: 4px;
+    border-left-width: 4px;
+}
+
+.navbar-dark .dropdown-menu {
+    border: none;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    margin-top: 8px;
+    animation: dropdownFadeIn 0.2s ease;
+}
+
+@keyframes dropdownFadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Offerings dropdown */
+.dropdown-menu-offerings {
+    min-width: 220px;
+}
+
+.dropdown-menu-offerings .dropdown-item {
+    padding: 12px 20px;
+    font-weight: 500;
+    color: var(--dark);
+    transition: var(--transition);
+}
+
+.dropdown-menu-offerings .dropdown-item i {
+    width: 24px;
+    margin-right: 10px;
+    color: #E9A825;
+    font-size: 15px;
+}
+
+.dropdown-menu-offerings .dropdown-item:hover {
+    background: #FFF8E8;
+    color: #CC8F10;
+    padding-left: 24px;
+}
+
+/* Presence dropdown */
+.dropdown-menu-presence {
+    min-width: 340px;
+    padding: 20px !important;
+}
+
+.presence-header {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #E9A825;
+}
+
+.presence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px 12px;
+}
+
+.presence-grid span {
+    font-size: 0.85rem;
+    color: var(--body-color);
+    padding: 5px 0;
+    transition: var(--transition);
+}
+
+.presence-grid span:hover {
+    color: #E9A825;
+}
+
+.presence-footer {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-weight: 600;
+    color: #E9A825;
+    font-size: 0.88rem;
+    text-align: center;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-dark .dropdown-menu {
+        background: rgba(34, 57, 93, 0.95);
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0 15px;
+    }
+
+    .dropdown-menu-offerings .dropdown-item {
+        color: rgba(255, 255, 255, 0.7);
+        padding: 10px 15px;
+    }
+
+    .dropdown-menu-offerings .dropdown-item:hover {
+        background: transparent;
+        color: white;
+        padding-left: 20px;
+    }
+
+    .dropdown-menu-offerings .dropdown-item i {
+        color: #E9A825;
+    }
+
+    .dropdown-menu-presence {
+        min-width: auto;
+        padding: 15px !important;
+    }
+
+    .presence-header {
+        color: white;
+        border-bottom-color: rgba(233, 168, 37, 0.5);
+    }
+
+    .presence-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .presence-grid span {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .presence-grid span:hover {
+        color: #E9A825;
+    }
+
+    .presence-footer {
+        border-top-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
 /* ---------- Hero Carousel Modern ---------- */
 .carousel-caption {
     background: linear-gradient(135deg, rgba(233, 168, 37, 0.7) 0%, rgba(34, 57, 93, 0.8) 100%) !important;
