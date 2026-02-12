@@ -545,6 +545,18 @@ body {
     letter-spacing: 1px;
 }
 
+.team-avatar-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin: 0 auto 18px;
+    display: block;
+    border: 3px solid #E9A825;
+    box-shadow: 0 4px 12px rgba(233, 168, 37, 0.2);
+}
+
 .team-card h5 {
     color: var(--dark);
     font-weight: 700;
